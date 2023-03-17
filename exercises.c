@@ -56,7 +56,7 @@ Persona *crearPersona(char nombre[], char rut[], int edad) {
   Persona *p = (Persona *)malloc(sizeof(Persona));
   // asignar valores de entrada a los campos de p
 
-  strcpy( p->nombre, nombre);
+  strcpy(p->nombre, nombre);
   strcpy(p->rut, rut);
   p->edad = edad;
 
@@ -76,7 +76,21 @@ typedef struct {
   int capacidad; // capacidad del arreglo
 } Vector;
 
-Vector *crearVector(int n) { return NULL; }
+Vector *crearVector(int n) {
+  Vector *array = (Vector *)malloc(sizeof(Vector));
+
+  array->capacidad = n;
+  array->datos = (int *)malloc(n * sizeof(int));
+
+  if (array->datos == NULL)
+    return NULL;
+
+  for (short i = 0; i < n; i++) {
+    array->datos[i] = 0;
+  }
+
+  return array;
+}
 
 /*
 Ejercicio 5a.
