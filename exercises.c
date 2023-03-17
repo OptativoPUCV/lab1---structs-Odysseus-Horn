@@ -82,9 +82,6 @@ Vector *crearVector(int n) {
   array->capacidad = n;
   array->datos = (int *)malloc(n * sizeof(int));
 
-  if (array->datos == NULL)
-    return NULL;
-
   for (short i = 0; i < n; i++) {
     array->datos[i] = 0;
   }
@@ -97,7 +94,7 @@ Ejercicio 5a.
 Programe la función void asignarValor(Vector * v, int i, int valor),
 la cual asigna el valor a la posición i del vector v.
 */
-void asignarValor(Vector *v, int i, int valor) {}
+void asignarValor(Vector *v, int i, int valor) { v->datos[i] = valor; }
 
 /*
 Ejercicio 6.
